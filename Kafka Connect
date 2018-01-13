@@ -1,0 +1,12 @@
+Start Zookeeper , Server1,2 
+
+**********Start the Source & Sink connector*******
+bin/connect-standalone.sh config/connect-standalone.properties 
+config/connect-file-source.properties config/connect-file-sink.properties 
+
+Create test.txt file under kafka folder
+
+start consumer ****
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic connect-test --from-beginning
+
+test.sink.txt file created 
